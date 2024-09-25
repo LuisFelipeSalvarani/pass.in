@@ -6,3 +6,13 @@ Content-Type: application/json
   "details": "Um evento para quem é apaixonado por programção",
   "maximumAttendees": 100
 }
+
+###
+
+POST http://localhost:3333/events/ca852e84-50f1-40ca-bfeb-934e53b51649/attendees
+Content-Type: application/json
+
+{
+  "name": "Luis Felipe Salvarani",
+  "email": "felipe_salvarani@hotmail.com"
+}
