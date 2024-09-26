@@ -28,3 +28,7 @@ GET http://localhost:3333/attendees/3/badge
 ###
 
 GET http://localhost:3333/attendees/3/check-in
+
+###
+
+GET http://localhost:3333/events/54563441-6d1d-4c0d-94df-884c664cf28c/attendees?query=felipe
