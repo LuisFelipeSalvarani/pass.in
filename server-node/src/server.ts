@@ -17,5 +17,3 @@ app.register(registerForEvent)
 app.listen({ port: 3333 }).then(() => {
   console.log('HTTP serving running')
 })
-
-// 46:46

@@ -2,17 +2,17 @@ POST http://localhost:3333/events
 Content-Type: application/json
 
 {
-  "title": "Unite Summit",
-  "details": "Um evento para quem é apaixonado por programção",
-  "maximumAttendees": 100
+  "title": "Novo evento2",
+  "details": null,
+  "maximumAttendees": 1
 }
 
 ###
 
-POST http://localhost:3333/events/ca852e84-50f1-40ca-bfeb-934e53b51649/attendees
+POST http://localhost:3333/events/54563441-6d1d-4c0d-94df-884c664cf28c/attendees
 Content-Type: application/json
 
 {
   "name": "Luis Felipe Salvarani",
-  "email": "felipe_salvarani@hotmail.com"
+  "email": "felipe_salvarani2@hotmail.com"
 }
