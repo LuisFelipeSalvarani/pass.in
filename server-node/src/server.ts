@@ -1,9 +1,11 @@
 import fastify from 'fastify'
 
+import fastifyCors from '@fastify/cors'
 import fastifySwagger from '@fastify/swagger'
 import fastifySwaggerUI from '@fastify/swagger-ui'
 
 import {
+  type ZodTypeProvider,
   jsonSchemaTransform,
   serializerCompiler,
   validatorCompiler,
@@ -16,7 +18,11 @@ import { getEvent } from './routes/get-event'
 import { getEventAttendees } from './routes/get-event-attendees'
 import { registerForEvent } from './routes/register-for-event'
 
-const app = fastify()
+export const app = fastify().withTypeProvider<ZodTypeProvider>()
+
+app.register(fastifyCors, {
+  origin: '*',
+})
 
 app.register(fastifySwagger, {
   swagger: {
@@ -48,6 +54,6 @@ app.register(getEventAttendees)
 
 app.setErrorHandler(errorHandler)
 
-app.listen({ port: 3333 }).then(() => {
+app.listen({ port: 3333, host: '0.0.0.0' }).then(() => {
   console.log('HTTP serving running')
 })
